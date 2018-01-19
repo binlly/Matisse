@@ -89,11 +89,11 @@ public final class SelectionSpec {
     }
 
     public boolean onlyShowImages() {
-        return showSingleMediaType && MimeType.ofImage().containsAll(mimeTypeSet);
+        return showSingleMediaType && MimeType.Companion.ofImage().containsAll(mimeTypeSet);
     }
 
     public boolean onlyShowVideos() {
-        return showSingleMediaType && MimeType.ofVideo().containsAll(mimeTypeSet);
+        return showSingleMediaType && MimeType.Companion.ofVideo().containsAll(mimeTypeSet);
     }
 
     private static final class InstanceHolder {

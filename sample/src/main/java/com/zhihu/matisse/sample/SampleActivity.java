@@ -75,8 +75,8 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                         if (aBoolean) {
                             switch (v.getId()) {
                                 case R.id.zhihu:
-                                    Matisse.from(SampleActivity.this)
-                                            .choose(MimeType.ofAll(), false)
+                                    Matisse.Companion.from(SampleActivity.this)
+                                            .choose(MimeType.Companion.ofAll(), false)
                                             .countable(true)
                                             .capture(true)
                                             .captureStrategy(
@@ -91,8 +91,8 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                             .forResult(REQUEST_CODE_CHOOSE);
                                     break;
                                 case R.id.dracula:
-                                    Matisse.from(SampleActivity.this)
-                                            .choose(MimeType.ofImage())
+                                    Matisse.Companion.from(SampleActivity.this)
+                                            .choose(MimeType.Companion.ofImage())
                                             .theme(R.style.Matisse_Dracula)
                                             .countable(false)
                                             .maxSelectable(9)
@@ -123,7 +123,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
-            mAdapter.setData(Matisse.obtainResult(data), Matisse.obtainPathResult(data));
+            mAdapter.setData(Matisse.Companion.obtainResult(data), Matisse.Companion.obtainPathResult(data));
         }
     }
 
